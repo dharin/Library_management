@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 gem 'pg', '~> 0.18'
 gem 'rails_12factor'
 # Use jquery as the JavaScript library
@@ -32,7 +32,6 @@ gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 group :development, :test do
