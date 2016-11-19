@@ -10,4 +10,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def add_member
+    @user = User.new
+    @role = Role.find_by_name(params[:role_name])
+  end
 end

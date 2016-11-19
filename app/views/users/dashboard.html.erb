@@ -6,8 +6,11 @@
     </div>
     <div class="inner">
       <div class="actiondiv">
-        <div class="pull-left">
-          <%= link_to "Add Member".html_safe, 'javascript:void(0)', :class => "btn btn-primary btn-sm margin-remove",:data => {:disable_with => "<i class='icon-spinner icon-spin'></i> Adding..."} %>
+        <div class="pull-right">
+          <% if current_user.is_admin? %>
+            <%= link_to "Add Staff".html_safe, add_member_path('staff'), :class => "btn btn-primary btn-sm margin-remove",:data => {:disable_with => "Adding..."} %>
+          <% end %>
+          <%= link_to "Add Student".html_safe, add_member_path('student'), :class => "btn btn-primary btn-sm margin-remove",:data => {:disable_with => "Adding..."} %>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -33,7 +36,6 @@
                 <%= member.role_id.present? ? member.role.name : '' %>
               </td>
               <td>
-                <%= link_to "Show".html_safe, 'javascript:void(0)', :method => :get , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Show'%> &nbsp;
                 <%= link_to "Edit".html_safe,'javascript:void(0)',  :method => :get , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Edit'%> &nbsp;
                 <%= link_to "Delete".html_safe,'javascript:void(0)', :method => :get , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Delete'%>&nbsp;
               </td>
