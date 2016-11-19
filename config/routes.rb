@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'users/submit_member' => 'users#submit_member', as: :submit_member
   patch 'users/update_member/:id' => 'users#update_member', as: :update_member
   delete 'users/destroy/:id' => 'users#destroy', as: :destroy_member
+  post 'book_search' => 'home#book_search', as: :book_search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
