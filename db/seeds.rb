@@ -7,7 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # For Role Default Data
-Role.create([
-    {name: "admin"},
-    {name: "staff"},
-    {name: "student"}])
+# Role.create([
+#     {name: "staff"},
+#     {name: "student"}])
+admin_user = User.find_by_email(Rails.application.secrets.smtp_email) || User.new
+if admin_user.new_record?
+	admin_user.email = Rails.application.secrets.smtp_email
+	admin_user.password = Rails.application.secrets.smtp_password
+	admin_user.password_confirmation = Rails.application.secrets.smtp_password
+	admin_user.is_admin = true
+	admin_user.role_id = Role.find_by_name('staff').id
+	admin_user.save(validate: false)
+end
