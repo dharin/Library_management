@@ -6,10 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# For Role Default Data
-# Role.create([
-#     {name: "staff"},
-#     {name: "student"}])
 admin_user = User.find_by_email(Rails.application.secrets.smtp_email) || User.new
 if admin_user.new_record?
 	admin_user.email = Rails.application.secrets.smtp_email
