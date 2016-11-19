@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'admin/sign_in'}
+  devise_for :users
   get 'home/index'
 
+  get 'users/admin_dashboard/:id' => 'users#admin_dashboard', as: :admin_dashboard
+  get 'users/staff_dashboard/:id' => 'users#staff_dashboard', as: :staff_dashboard
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

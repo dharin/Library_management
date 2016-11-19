@@ -1,12 +1,12 @@
 a:focus {
 	outline: medium none;
 }
-
+/*
 .error{
 	color: #a21f1f;
 	font-size: 12px;
 	font-weight: normal;
-}
+}*/
 
 .padding-0{
 	padding: 0px;
