@@ -1,2 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h2 class='text-center color-black'>Welcome!</h2><br/>
+<h3 class='text-center color-black'>Get started by using the search field below</h3><br/><br/><br/><br/>
+<%= form_tag(root_path) do %>
+<div class='col-md-3'></div>
+<div class="form-group text-center  col-md-6">
+	<div class='col-md-11 padding-right-0'>
+		<%= text_field_tag 'search',nil, class: 'form-control' %>
+	</div>
+	<div class='col-md-1'>
+		<%= button_tag 'Search', class: 'btn btn-primary' %>	
+	</div>
+</div>
+
+<div class='col-md-3'></div>
+<% end %>

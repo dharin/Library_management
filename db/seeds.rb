@@ -14,8 +14,8 @@ Rails.application.secrets.roles.each do |key,role|
 end
 admin_user = User.find_by_email(Rails.application.secrets.smtp_email) || User.new
 if admin_user.new_record?
-	admin_user.first_name = 'admin'
-	admin_user.last_name = 'admin'
+	admin_user.first_name = Rails.application.secrets.smtp_name
+	admin_user.last_name = Rails.application.secrets.smtp_name
 	admin_user.email = Rails.application.secrets.smtp_email
 	admin_user.password = Rails.application.secrets.smtp_password
 	admin_user.password_confirmation = Rails.application.secrets.smtp_password

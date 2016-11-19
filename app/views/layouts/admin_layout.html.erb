@@ -39,18 +39,14 @@
   <body>
 
     <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
+      <div class="container-fluid">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
         <%= link_to 'LibraryManagement', root_path, class: 'navbar-brand'%>
-        <div class="pull-right">
-          <% if current_user.present? %>
-            <%= link_to "Logout".html_safe, destroy_user_session_path, method: :delete%>
-          <% end %>
-        </div>
+        <%= render partial: 'layouts/header' %>
       </div>
     </div>
 
@@ -63,6 +59,10 @@
       </div><!--/row-->
 
     </div> <!-- /container -->
-
+    <footer class="footer">
+      <div class="container-fluid">
+        <p class="text-muted">Phone: 555-555-5555&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: demo@library.com</p>
+      </div>
+    </footer>
   </body>
 </html>
