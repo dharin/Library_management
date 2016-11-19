@@ -10,7 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require bootstrap_and_overrides.css.less
+ *= require dataTables.bootstrap.min.css
  *= require developer
  *= require_self
  */

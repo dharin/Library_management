@@ -13,4 +13,23 @@ $(document).on('ready page:load', function(event) {
 			$( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
 		}
   })
+
+  $('#user_list').dataTable({
+    "aoColumnDefs": [
+    {
+      'bSortable': false,
+      "aTargets": [ 3 ]
+    }
+    ],
+    "aaSorting": [],
+    "aLengthMenu": [
+    [25, 50, 100, -1],
+    [25, 50, 100, "All"] // change per page values here
+    ],
+    // set the initial value
+    "iDisplayLength": 50
+  });
+
+  jQuery('#user_list_wrapper .dataTables_filter input').addClass("form-control"); // modify table search input
+
 })

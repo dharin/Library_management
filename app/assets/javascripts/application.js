@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.validate.js
+//= require jquery.dataTables
 //= require turbolinks
 //= require twitter/bootstrap
 //= require developer
