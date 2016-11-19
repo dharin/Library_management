@@ -7,10 +7,10 @@ $(document).on('ready page:load', function(event) {
 		  error.insertAfter( element );
 		},
 		highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
 		},
 		unhighlight: function (element, errorClass, validClass) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
 		}
   })
 })
