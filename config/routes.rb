@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'users/dashboard/:id' => 'users#dashboard', as: :dashboard
+  get 'users/add_member/:role_name' => 'users#add_member', as: :add_member
+  post 'users/submit_member' => 'users#submit_member', as: :submit_member
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

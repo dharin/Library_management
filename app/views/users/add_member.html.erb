@@ -1,0 +1,12 @@
+<div class="col-md-8 col-md-offset-2">
+  <% if @role.present? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Add <%= @role.name.capitalize %>
+      </div>
+      <div class="panel-body">
+        <%= render partial: 'form', locals: {user: @user, role_id: @role.id} %>
+      </div>
+    </div>
+  <% end %>
+</div>
