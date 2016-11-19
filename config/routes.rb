@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   get 'users/dashboard/:id' => 'users#dashboard', as: :dashboard
   get 'users/add_member/:role_name' => 'users#add_member', as: :add_member
+  get 'users/edit_member/:id' => 'users#edit_member', as: :edit_member
   post 'users/submit_member' => 'users#submit_member', as: :submit_member
+  patch 'users/update_member/:id' => 'users#update_member', as: :update_member
+  delete 'users/destroy/:id' => 'users#destroy', as: :destroy_member
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,4 @@
-<%= form_for user,url: :submit_member, :html => { :class => "form-horizontal user" } do |f| %>
+<%= form_for(user, url: user.new_record? ? submit_member_path : update_member_path(user.id), :html => { :class => "form-horizontal user" }) do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -34,17 +34,23 @@
   <div class="form-group">
     <%= f.label :email, :class => 'control-label col-lg-3' %>
     <div class="col-lg-7">
-      <%= f.email_field :email, :class => 'form-control required' %>
+      <% if user.new_record? %>
+        <%= f.email_field :email, :class => 'form-control required' %>
+      <% else %>
+        <%= f.label :email , user.email, :class => 'control-label' %>
+      <% end %>
     </div>
     <%=f.error_span(:email) %>
   </div>
-  <div class="form-group">
-    <%= f.label :password, :class => 'control-label col-lg-3' %>
-    <div class="col-lg-7">
-      <%= f.text_field :password, :class => 'form-control required' %>
+  <% if user.new_record? %>
+    <div class="form-group">
+      <%= f.label :password, :class => 'control-label col-lg-3' %>
+      <div class="col-lg-7">
+        <%= f.password_field :password, :class => 'form-control required', minlength: 8 %>
+      </div>
+      <%=f.error_span(:encrypted_password) %>
     </div>
-    <%=f.error_span(:encrypted_password) %>
-  </div>
+  <% end %>
   <%= f.hidden_field :role_id, value: role_id, :class => 'form-control' %>
 
   <div class="form-group">

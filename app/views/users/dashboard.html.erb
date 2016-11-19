@@ -33,11 +33,11 @@
                 <%= member.email %>
               </td>
               <td>
-                <%= member.role_id.present? ? member.role.name : '' %>
+                <%= member.role_id.present? ? member.role.name.capitalize : '' %>
               </td>
               <td>
-                <%= link_to "Edit".html_safe,'javascript:void(0)',  :method => :get , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Edit'%> &nbsp;
-                <%= link_to "Delete".html_safe,'javascript:void(0)', :method => :get , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Delete'%>&nbsp;
+                <%= link_to "Edit".html_safe,edit_member_path(member.id),  :method => :get, class: 'btn btn-xs  btn-primary' , data: { toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Edit'%> &nbsp;
+                <%= link_to "Delete".html_safe,destroy_member_path(member.id), :method => :delete, class: 'btn btn-xs btn-danger' , data: { confirm: "Are you sure?" , toggle: 'tooltip', placement: 'top', trigger: 'hover', :disable_with => "<i class='icon-spinner icon-spin'></i>" }, title: 'Delete'%>&nbsp;
               </td>
             </tr>
           <% end %>
