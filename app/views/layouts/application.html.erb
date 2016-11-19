@@ -46,15 +46,7 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to 'LibraryManagement', root_path, class: 'navbar-brand'%>
-        <ul class="nav navbar-nav navbar-right">
-        <li>
-          <% if current_user.present? %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete%>
-          <% else %>
-            <%= link_to "Login", new_user_session_path %>
-          <% end %>
-        </li>
-      </ul>
+        <%= render partial: 'layouts/header'%>
       </div>
     </div>
 
