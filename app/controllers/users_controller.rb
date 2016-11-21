@@ -43,7 +43,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to dashboard_path(current_user.id)
+    respond_to do |format|
+      format.html { redirect_to dashboard_path(current_user.id), notice: 'Member was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
